@@ -1,0 +1,53 @@
+<input type="text" [(ngModel)]="campo" />
+<p>{{ campo }}</p>
+<button (click)="mensagem()">Clique aqui</button>
+
+<br />
+
+<button (click)="naoGostoMais()">Clique aqui 2</button>
+
+<p *ngIf="gostandoDeAngular">Parabens</p>
+
+<p *ngIf="!gostandoDeAngular">Errrouu</p>
+
+<br />
+
+<input type="text" [(ngModel)]="cor" />
+
+<div [ngSwitch]="cor">
+  <p *ngSwitchCase="'azul'">Escolheu azul</p>
+  <p *ngSwitchCase="'vermelho'">Escolheu vermelho</p>
+  <p *ngSwitchCase="'verde'">Escolheu verde</p>
+  <p *ngSwitchCase="'amarelo'">Escolheu amarelo</p>
+</div>
+
+<br />
+
+<ul>
+  <li *ngFor="let cidade of cidades">{{ cidade }}</li>
+</ul>
+
+<table class="table-dark">
+  <th>
+    <tr>
+      <td>Cidade</td>
+    </tr>
+  </th>
+  <tr *ngFor="let i of cidades">
+    <td>{{ i }}</td>
+  </tr>
+</table>
+
+<br />
+
+<style>
+    .fonte1{
+        color: red;
+    }
+    .fonte2{
+        color: blue;
+    }
+</style>
+
+<button (click)="mudarFonte()">Mudar cor</button>
+<p [className]="fonte ? 'fonte1' : 'fonte2'">TEXTO</p>
